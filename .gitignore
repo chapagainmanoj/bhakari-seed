@@ -17,6 +17,7 @@ env
 # Node and Webpack files
 node_modules
 npm-debug.log
+yarn-error.log
 webpack-stats*
 
 # Static assests
@@ -29,3 +30,6 @@ db.sqlite3
 
 # Apple files
 .DS_Store
+
+# ## #
+.source
