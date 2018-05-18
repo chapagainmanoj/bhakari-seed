@@ -3,7 +3,7 @@ FROM node:latest
 COPY . /app
 
 WORKDIR /app
-RUN npm install
+RUN npm install --silent
 
 COPY ./docker_compose/node/development/start.sh /start.sh
 RUN sed -i 's/\r//' /start.sh
