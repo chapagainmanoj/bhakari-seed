@@ -1,4 +1,4 @@
-# bhakari-seed
+# potato-seed
 React-Django project seed with Docker, Nginx and Postgres
 
 * to run in develop
