@@ -11,7 +11,18 @@ module.exports = {
     }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
-    }]
+    }, {
+      test: /\.sass/,
+      loader: 'style-loader!css-loader!sass-loader'
+    }, {
+      test: /\.less/,
+      loader: 'style-loader!css-loader!less-loader'
+    },
+    {
+      test: /\.(png|jpg|gif|woff|svg|eot|ttf|woff2)$/,
+      loader: 'url-loader?limit=1024&name=[name]-[hash:6].[ext]!image-webpack-loader',
+    }
+    ]
   },
 
   resolve: {

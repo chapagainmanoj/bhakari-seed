@@ -13,17 +13,6 @@ services:
       - postgres_backup_dev:/backups
     env_file: .env
 
-  node:
-    container_name: node_server
-    build:
-      context: .
-      dockerfile: ./docker_compose/node/development/Dockerfile
-    command: /start.sh
-    volumes:
-      - .:/app
-    ports:
-      - "3000:3000"
-
   django:
     container_name: django_server
     build:
@@ -40,3 +29,14 @@ services:
       - "8080:8080"
     links:
       - postgres
+
+  node:
+    container_name: node_server
+    build:
+      context: .
+      dockerfile: ./docker_compose/node/development/Dockerfile
+    command: /start.sh
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"

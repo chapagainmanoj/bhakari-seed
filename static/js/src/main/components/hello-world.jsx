@@ -1,8 +1,14 @@
+import 'babel-polyfill';
 import React from "react";
+import {Button, Header} from 'semantic-ui-react';
 
 const HelloWorld = () => {
   return (
-    <h1>Hello Man!</h1>
+    <div>
+      <h1>Hello React!</h1>
+      <Header>Hey</Header>
+      <Button>this is all i need</Button>
+    </div>
   );
 };
 

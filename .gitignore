@@ -24,6 +24,7 @@ webpack-stats*
 staticfiles
 static_cdn
 media_cdn
+static/builds*
 
 # Ignore sqlite
 db.sqlite3
@@ -33,3 +34,5 @@ db.sqlite3
 
 # ## #
 .source
+*.fk
+*.bak
