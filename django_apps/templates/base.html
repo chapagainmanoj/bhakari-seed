@@ -12,8 +12,28 @@
     <meta name="author" content="">
         <meta name="description" content="">
         <meta name="keywords" content="">
+        {% block meta %}
+            <meta name="description" content="Khalti is a digital wallet for instant, secure and hassle-free online payments in Nepal. Recharge your mobiles, pay bills, book tickets wherever you are.">
+        {% endblock meta %}
 
-    <title>{% block head_title %}{% endblock head_title %}</title>
+  {% block open_graph %}
+      <meta property="og:type" content="business.business">
+      <meta property="og:title" content="Khalti">
+      <meta property="og:url" content="https://khalti.com/">
+      <meta property="og:image" content="https://khalti.com/static/www/images/khaltilogo.png">
+      <meta property="business:contact_data:street_address" content="Harihar Bhawan, Pulchowk">
+      <meta property="business:contact_data:locality" content="Lalitpur">
+      <meta property="business:contact_data:region" content="Bagmati">
+      <meta property="business:contact_data:postal_code" content="44700">
+      <meta property="business:contact_data:country_name" content="Nepal">
+  {% endblock open_graph %}
+
+
+    <title>
+      {% block head_title %}
+        Khalti.com | Digital Wallet &amp; Online Payment Services, Mobile Topup, Domestic Airlines in Nepal
+      {% endblock head_title %}
+    </title>
 
     <!-- Allows you to inject CCS here -->
     {% block stylesheets %}
