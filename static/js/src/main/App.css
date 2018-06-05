@@ -1,0 +1,10 @@
+.AppContainer {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  padding: 70px 0;
+}
+
+.App {
+  text-align: left;
+}
