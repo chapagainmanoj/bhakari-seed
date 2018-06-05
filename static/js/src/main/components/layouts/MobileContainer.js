@@ -11,7 +11,7 @@ import {
   Segment,
 } from 'semantic-ui-react'
 
-import HomepageHeading from '../HomepageHeading'
+// import HomepageHeading from '../HomepageHeading'
 
 class MobileContainer extends Component {
   state = {}

@@ -1,9 +1,10 @@
 import 'babel-polyfill';
-import React, { Components } from 'react';
+import React from 'react';
 
-import { Header, Segment } from 'semantic-ui-react';
+import { Header, Segment, Icon } from 'semantic-ui-react';
 import ResponsiveContainer from './components/layouts/ResponsiveContainer';
 import Footer from './components/Footer';
+// import AccountIcon from 'load.png';
 import './App.css'
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
             <Header as='h3' > My Todo list </Header>
             <div className = "App" >
             <Header> Test content </Header>
+            <Icon name="settings"></Icon>
             </div>
             </Segment>
         <Footer />

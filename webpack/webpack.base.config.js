@@ -19,7 +19,11 @@ module.exports = {
       loader: 'style-loader!css-loader!less-loader'
     },
     {
-      test: /\.(png|jpg|gif|woff|svg|eot|ttf|woff2)$/,
+      test: /\.(png|jpg|gif)$/,
+      loader: 'url-loader?limit=5120&name=[name]-[hash:6].[ext]!image-webpack-loader',
+    },
+    {
+      test: /\.(woff|svg|eot|ttf|woff2)$/,
       loader: 'url-loader?limit=1024&name=[name]-[hash:6].[ext]!image-webpack-loader',
     }
     ]
