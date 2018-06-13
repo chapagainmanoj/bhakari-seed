@@ -8,6 +8,7 @@ import {
 } from '../actions'
 import Picker from '../components/Picker'
 import Posts from '../components/Posts'
+import { Button, Icon, Label, Segment , Dimmer, Loader} from 'semantic-ui-react'
 
 const SUBREDDITS = ['ProgrammerHumor', 'Showerthoughts', 'Jokes']
 
@@ -46,28 +47,32 @@ class AsyncApp extends Component {
     const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props
     return (
       <div>
+      <Segment>
         <Picker
           value={selectedSubreddit}
           onChange={this.handleChange}
           options={SUBREDDITS}
         />
-        <p>
-          {lastUpdated &&
-            <span>
-              Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
-              {' '}
-            </span>}
+        <div className='pt1'>
+        {lastUpdated &&
+          <Label>Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
+          {' '}</Label>}
           {!isFetching &&
-            <button onClick={this.handleRefreshClick}>
-              Refresh
-            </button>}
-        </p>
-        {isFetching && posts.length === 0 && <h2>Loading...</h2>}
+            <Button style={{ margin: "auto 10px" }} onClick={this.handleRefreshClick}>
+            <Icon name="refresh"/>
+            </Button>}
+        </div>
+      </Segment>
+        <Segment>
+          <Dimmer active = {isFetching && posts.length === 0} inverted>
+            <Loader inverted>Loading</Loader>
+          </Dimmer>
         {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
         {posts.length > 0 &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <Posts posts={posts} />
           </div>}
+        </Segment>
       </div>
     )
   }

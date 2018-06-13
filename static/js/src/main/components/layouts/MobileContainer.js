@@ -11,17 +11,11 @@ import {
   Segment,
 } from 'semantic-ui-react'
 
-// import HomepageHeading from '../HomepageHeading'
-
-
-const leftItems = [
-  { as: "a", content: "Home", key: "home"},
-  { as: "a", content: "Users", key: "users" }
-];
-const rightItems = [
-  { as: "a", content: "Login", key: "login" },
-  { as: "a", content: "Register", key: "register" }
-];
+import {
+  Route,
+  Link,
+  BrowserRouter
+} from 'react-router-dom';
 
 class MobileContainer extends Component {
   state = {}
@@ -47,10 +41,12 @@ class MobileContainer extends Component {
             inverted
             vertical
             visible={sidebarOpened}>
-            <Menu.Item as='a' active>
-              Home
+            <Menu.Item>
+              <Link to="/">Home</Link>
             </Menu.Item>
-            <Menu.Item as='a'>Work</Menu.Item>
+            <Menu.Item active>
+              <Link to="/subreddit">Subreddit</Link>
+            </Menu.Item>
             <Menu.Item as='a'>Company</Menu.Item>
             <Menu.Item as='a'>Careers</Menu.Item>
             <Menu.Item as='a'>Log in</Menu.Item>
@@ -65,7 +61,6 @@ class MobileContainer extends Component {
             <Segment
               inverted
               textAlign='center'
-              // style={{ minHeight: 350, padding: '1em 0em' }}
               vertical
             >
               <Container>

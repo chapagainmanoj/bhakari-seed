@@ -9,7 +9,11 @@ import {
   Button,
   Container} from 'semantic-ui-react'
 
-import HomepageHeading from '../HomepageHeading';
+  import {
+    Route,
+    Link,
+    BrowserRouter
+  } from 'react-router-dom';
 
 class DesktopContainer extends Component {
   state = {}
@@ -31,7 +35,6 @@ class DesktopContainer extends Component {
           <Segment
             inverted
             textAlign='center'
-            // style={{ minHeight: 700, padding: '1em 0em' }} // needs for HomepageHeading
             vertical
           >
             <Menu
@@ -42,10 +45,12 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
-                <Menu.Item as='a' active>
-                  Home
+              <Menu.Item>
+                <Link to="/">Home</Link>
+              </Menu.Item>
+                <Menu.Item active>
+                  <Link to="/subreddit">Subreddit</Link>
                 </Menu.Item>
-                <Menu.Item as='a'>Work</Menu.Item>
                 <Menu.Item as='a'>Company</Menu.Item>
                 <Menu.Item as='a'>Careers</Menu.Item>
                 <Menu.Item position='right'>

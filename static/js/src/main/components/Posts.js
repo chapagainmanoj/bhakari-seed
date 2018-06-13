@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import {List} from 'semantic-ui-react'
+
 export default class Posts extends Component {
   render() {
     return (
-      <ul>
-        {this.props.posts.map((post, i) => <li key={i}>{post.title}</li>)}
-      </ul>
+      <List celled>
+        {this.props.posts.map((post, i) =>
+          <List.Item key={i}>
+            <List.Content>
+            {post.title}
+            </List.Content>
+          </List.Item>
+        )}
+      </List>
     )
   }
 }
