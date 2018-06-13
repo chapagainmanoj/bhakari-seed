@@ -13,6 +13,16 @@ import {
 
 // import HomepageHeading from '../HomepageHeading'
 
+
+const leftItems = [
+  { as: "a", content: "Home", key: "home"},
+  { as: "a", content: "Users", key: "users" }
+];
+const rightItems = [
+  { as: "a", content: "Login", key: "login" },
+  { as: "a", content: "Register", key: "register" }
+];
+
 class MobileContainer extends Component {
   state = {}
 
@@ -31,7 +41,12 @@ class MobileContainer extends Component {
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
-          <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
+          <Sidebar
+            as={Menu}
+            animation='overlay'
+            inverted
+            vertical
+            visible={sidebarOpened}>
             <Menu.Item as='a' active>
               Home
             </Menu.Item>
@@ -50,7 +65,7 @@ class MobileContainer extends Component {
             <Segment
               inverted
               textAlign='center'
-              style={{ minHeight: 350, padding: '1em 0em' }}
+              // style={{ minHeight: 350, padding: '1em 0em' }}
               vertical
             >
               <Container>
@@ -80,6 +95,8 @@ class MobileContainer extends Component {
 
 MobileContainer.propTypes = {
   children: PropTypes.node,
+  leftNav: PropTypes.node,
+  rightNav: PropTypes.node
 }
 
 export default MobileContainer;
