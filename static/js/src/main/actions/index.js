@@ -39,6 +39,10 @@ function fetchPosts(subreddit) {
   return dispatch => {
     dispatch(requestPosts(subreddit))
     return fetch(`https://www.reddit.com/r/${subreddit}.json`)
+    // return fetch(`/support/log/`)
+      // .then(response => {
+      //   console.log(response, 'fetched');
+      // })
       .then(response => response.json())
       .then(json => dispatch(receivePosts(subreddit, json)))
   }

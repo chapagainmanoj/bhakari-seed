@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import {
   Responsive,
   Icon,
   Sidebar,
+  Header,
   Menu,
   Button,
   Container,
@@ -34,29 +35,24 @@ class MobileContainer extends Component {
 
     return (
       <Responsive {...Responsive.onlyMobile}>
-        <Sidebar.Pushable>
+        <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
             animation='overlay'
             inverted
             vertical
-            visible={sidebarOpened}>
-            <Menu.Item>
-              <Link to="/">Home</Link>
-            </Menu.Item>
-            <Menu.Item active>
-              <Link to="/subreddit">Subreddit</Link>
-            </Menu.Item>
+            visible={sidebarOpened}
+            >
+            <Link to='/' className='item' > Home </Link>
+            <Link to='/reddit' className='item' >Reddit</Link>
             <Menu.Item as='a'>Company</Menu.Item>
             <Menu.Item as='a'>Careers</Menu.Item>
-            <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a'>Sign Up</Menu.Item>
+            <Menu.Item as='a'>Profile in</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher
             dimmed={sidebarOpened}
             onClick={this.handlePusherClick}
-            style={{ minHeight: '100vh' }}
           >
             <Segment
               inverted
@@ -70,16 +66,12 @@ class MobileContainer extends Component {
                   </Menu.Item>
                   <Menu.Item position='right'>
                     <Button as='a' inverted>
-                      Log in
-                    </Button>
-                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                      Sign Up
+                      Profile
                     </Button>
                   </Menu.Item>
                 </Menu>
               </Container>
             </Segment>
-
             {children}
           </Sidebar.Pusher>
         </Sidebar.Pushable>
@@ -90,8 +82,6 @@ class MobileContainer extends Component {
 
 MobileContainer.propTypes = {
   children: PropTypes.node,
-  leftNav: PropTypes.node,
-  rightNav: PropTypes.node
 }
 
 export default MobileContainer;

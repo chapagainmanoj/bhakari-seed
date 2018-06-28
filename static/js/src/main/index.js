@@ -2,16 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import { AppContainer } from 'react-hot-loader';
-import reducer from './reducers'
+import { Route, Link } from 'react-router-dom';
 
 import 'semantic-ui-css/semantic.min.css';
-import './index.css';
 
+import { AppContainer } from 'react-hot-loader';
+import reducer from './reducers'
+import configureStore from './configureStore';
+import './index.css';
+// import Home from './Home'
 import App from './App';
 
-import configureStore from './configureStore';
 const store = configureStore()
+
 
 ReactDOM.render(
   <Provider store={store}>

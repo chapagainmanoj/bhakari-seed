@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^api-token-refresh/', refresh_jwt_token),
     url(r'^api-token-verify/', verify_jwt_token),
     url(r'^admin/', admin.site.urls),
+    url(r'^support/', include('django_apps.support.urls'))
 ]
 
 if settings.DEBUG:

@@ -41,7 +41,8 @@ module.exports = {
   // ],
   devServer: {
     host: 'localhost',
-    port: port,
+    port,
+    contentBase: '/',
     historyApiFallback: true,
     open: true,
     hot: true,

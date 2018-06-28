@@ -60,7 +60,9 @@ THIRD_PARTY_APPS = [
     'webpack_loader',
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'django_apps.support',
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 

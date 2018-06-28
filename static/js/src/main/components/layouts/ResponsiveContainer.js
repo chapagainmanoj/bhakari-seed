@@ -12,7 +12,7 @@ const ResponsiveContainer = ({ children }) => (
 )
 
 ResponsiveContainer.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 export default ResponsiveContainer;
